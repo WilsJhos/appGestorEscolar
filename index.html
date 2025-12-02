@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación del Futuro - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+   
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Educación del Futuro</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#estudiantes"><i class="fas fa-users"></i> Estudiantes</a></li>
+                    <li><a href="#cursos"><i class="fas fa-book"></i> Cursos</a></li>
+                    <li><a href="#calificaciones"><i class="fas fa-chart-bar"></i> Calificaciones</a></li>
+                    <li><a href="#reportes"><i class="fas fa-file-alt"></i> Reportes</a></li>
+                </ul>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <img src="https://ui-avatars.com/api/?name=Admin+Sistema&background=4A90E2&color=fff"
+                            alt="Usuario">
+                        <span>Admin Sistema</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <button class="btn-logout" id="btnLogout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="main-content">
+        <div class="container">
+           
+            <section id="inicio" class="dashboard-section active">
+                <div class="dashboard-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Panel de Control</h2>
+                    <p>Sistema de Gestión Escolar - Educación del Futuro</p>
+                </div>
+
+               
+                <div class="metrics-grid">
+                    <div class="metric-card primary">
+                        <div class="metric-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>11</h3>
+                            <p>Estudiantes Activos</p>
+                            <span class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i> 2% este mes
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card success">
+                        <div class="metric-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>5</h3>
+                            <p>Profesores</p>
+                            <span class="metric-trend">
+                                <i class="fas fa-minus"></i> Sin cambios
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card warning">
+                        <div class="metric-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>8</h3>
+                            <p>Cursos Activos</p>
+                            <span class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i> 3 nuevos
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card danger">
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>8.7</h3>
+                            <p>Promedio General</p>
+                            <span class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i> +0.3
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="quick-actions">
+                    <h3><i class="fas fa-bolt"></i> Acceso Rápido</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" data-section="estudiantes">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Nuevo Estudiante</span>
+                        </button>
+                        <button class="action-btn" data-section="cursos">
+                            <i class="fas fa-book-medical"></i>
+                            <span>Crear Curso</span>
+                        </button>
+                        <button class="action-btn" data-section="calificaciones">
+                            <i class="fas fa-edit"></i>
+                            <span>Asignar Calificaciones</span>
+                        </button>
+                        <button class="action-btn" data-section="reportes">
+                            <i class="fas fa-file-download"></i>
+                            <span>Generar Reportes</span>
+                        </button>
+                        <button class="action-btn" data-section="estudiantes">
+                            <i class="fas fa-search"></i>
+                            <span>Buscar Estudiantes</span>
+                        </button>
+                        <button class="action-btn" id="btnViewSchedule">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Ver Horarios</span>
+                        </button>
+                    </div>
+                </div>
+
+                
+                <div class="recent-activity">
+                    <h3><i class="fas fa-history"></i> Actividad Reciente</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Nuevo estudiante registrado</h4>
+                                <p>Jhon Cano se ha matriculado en el sistema</p>
+                                <span class="activity-time">Hace 9 hora</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Calificaciones actualizadas</h4>
+                                <p>Prof. Isaac Arteaga notas de Calidad de Software</p>
+                                <span class="activity-time">Hace 4 horas</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Reporte generado</h4>
+                                <p>Reporte de rendimiento del primer trimestre</p>
+                                <span class="activity-time">Hace 1 día</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="estudiantes" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Gestión de Estudiantes</h2>
+                    <button class="btn btn-primary" id="btnNewStudent">
+                        <i class="fas fa-plus"></i> Nuevo Estudiante
+                    </button>
+                </div>
+
+                
+                <div class="search-bar">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchStudent" placeholder="Buscar estudiante por nombre o matrícula...">
+                    </div>
+                    <select id="filterGrade">
+                        <option value="">Todos los semestres</option>
+                        <option value="1ro">1er semestre</option>
+                        <option value="2do">2do semestre</option>
+                        <option value="3ro">3er semestre</option>
+                        <option value="4to">4to semestre</option>
+                    </select>
+                </div>
+
+              
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Matrícula</th>
+                                <th>Nombre Completo</th>
+                                <th>grado</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Promedio</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTable">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="pagination-info">Página 1 de 5</span>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+           
+            <section id="cursos" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book"></i> Gestión de Cursos</h2>
+                    <button class="btn btn-primary" id="btnNewCourse">
+                        <i class="fas fa-plus"></i> Nuevo Curso
+                    </button>
+                </div>
+
+                
+                <div class="courses-grid" id="coursesGrid">
+                    
+                </div>
+            </section>
+
+            
+            <section id="calificaciones" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Calificaciones</h2>
+                    <div class="header-actions">
+                        <select id="selectCourse">
+                            <option value="">Seleccionar curso</option>
+                            <option value="Fundamentos de programación y metodología de desarrollo de software">Fundamentos de programación y metodología de desarrollo de software</option>
+                            <option value="Calidad de software">Calidad de software</option>
+                            <option value="Bases de Datos">Bases de Datos</option>
+                            <option value="ingles">Inglés</option>
+                        </select>
+                        <select id="selectPeriod">
+                            <option value="2025-1">2026 - Primer Semestre</option>
+                            <option value="2025-2">2026 - Segundo Semestre</option>
+                            <option value="2025-3">2026 - Tercer Semestre</option>
+                            <option value="2025-4">2026 - Cuarto Semestre</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Estudiante</th>
+                                <th>Parcial 1</th>
+                                <th>Parcial 2</th>
+                                <th>Parcial 3</th>
+                                <th>Parcial 4</th>
+                                <th>Final</th>
+                                <th>Promedio</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTable">
+                        
+                        </tbody>
+                    </table>
+                </div>
+
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Promedio del Curso</h4>
+                        <div class="stat-value">8.5</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Estudiantes Aprobados</h4>
+                        <div class="stat-value">92%</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar success" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Mejor Calificación</h4>
+                        <div class="stat-value">9.8</div>
+                        <span class="stat-detail">Wendy Macías</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Necesitan Mejorar</h4>
+                        <div class="stat-value">3</div>
+                        <span class="stat-detail">Estudiantes</span>
+                    </div>
+                </div>
+            </section>
+
+           
+            <section id="reportes" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-alt"></i> Reportes Académicos</h2>
+                    <button class="btn btn-primary" id="btnGenerateReport">
+                        <i class="fas fa-download"></i> Generar Reporte
+                    </button>
+                </div>
+
+                
+                <div class="reports-options">
+                    <div class="report-card" data-report="grades">
+                        <div class="report-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Reporte de Calificaciones</h4>
+                            <p>Exportar todas las calificaciones por curso y período</p>
+                            <button class="btn-report" data-type="grades">
+                                <i class="fas fa-download"></i> Generar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-card" data-report="students">
+                        <div class="report-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Lista de Estudiantes</h4>
+                            <p>Exportar información completa de todos los estudiantes</p>
+                            <button class="btn-report" data-type="students">
+                                <i class="fas fa-download"></i> Generar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-card" data-report="statistics">
+                        <div class="report-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Estadísticas Académicas</h4>
+                            <p>Reporte con gráficos y análisis de rendimiento</p>
+                            <button class="btn-report" data-type="statistics">
+                                <i class="fas fa-download"></i> Generar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-card" data-report="attendance">
+                        <div class="report-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Control de Asistencia</h4>
+                            <p>Reporte de asistencia por curso y estudiante</p>
+                            <button class="btn-report" data-type="attendance">
+                                <i class="fas fa-download"></i> Generar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="report-preview">
+                    <h3><i class="fas fa-eye"></i> Vista Previa del Reporte</h3>
+                    <div class="preview-content" id="reportPreview">
+                        <p>Seleccione un tipo de reporte para ver la vista previa</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+    <div class="modal" id="studentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Nuevo Estudiante</h3>
+                <button class="modal-close" id="closeStudentModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="studentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">
+                                <i class="fas fa-user"></i> Nombre Completo
+                            </label>
+                            <input type="text" id="studentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentMatricula">
+                                <i class="fas fa-id-card"></i> Matrícula
+                            </label>
+                            <input type="text" id="studentMatricula" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentEmail">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" id="studentEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPhone">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </label>
+                            <input type="tel" id="studentPhone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentGrade">
+                                <i class="fas fa-graduation-cap"></i> Semestre
+                            </label>
+                            <select id="studentGrade" required>
+                                <option value="">Seleccionar semestre</option>
+                                <option value="1ro">1er semestre</option>
+                                <option value="2do">2do semestre</option>
+                                <option value="3ro">3er semestre</option>
+                                <option value="4to">4to semestre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentBirthdate">
+                                <i class="fas fa-birthday-cake"></i> Fecha de Nacimiento
+                            </label>
+                            <input type="date" id="studentBirthdate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentAddress">
+                            <i class="fas fa-home"></i> Dirección
+                        </label>
+                        <textarea id="studentAddress" rows="2"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelStudent">Cancelar</button>
+                <button class="btn btn-primary" id="saveStudent">Guardar Estudiante</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal" id="gradeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Asignar Calificación</h3>
+                <button class="modal-close" id="closeGradeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="gradeForm">
+                    <div class="form-group">
+                        <label for="gradeStudent">
+                            <i class="fas fa-user"></i> Estudiante
+                        </label>
+                        <select id="gradeStudent" required>
+                            <option value="">Seleccionar estudiante</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gradeCourse">
+                            <i class="fas fa-book"></i> Curso
+                        </label>
+                        <select id="gradeCourse" required>
+                            <option value="">Seleccionar curso</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gradeType">
+                                <i class="fas fa-tag"></i> Tipo de Evaluación
+                            </label>
+                            <select id="gradeType" required>
+                                <option value="parcial">Parcial</option>
+                                <option value="tarea">Tarea</option>
+                                <option value="proyecto">Proyecto</option>
+                                <option value="final">Examen Final</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gradeValue">
+                                <i class="fas fa-star"></i> Calificación (0-10)
+                            </label>
+                            <input type="number" id="gradeValue" min="0" max="10" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gradeComments">
+                            <i class="fas fa-comment"></i> Comentarios
+                        </label>
+                        <textarea id="gradeComments" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelGrade">Cancelar</button>
+                <button class="btn btn-primary" id="saveGrade">Guardar Calificación</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educación del Futuro</h3>
+                    <p>Sistema de Gestión Escolar</p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Educación 123, Ciudad Futura</p>
+                    <p><i class="fas fa-phone"></i> +593 999999999</p>
+                    <p><i class="fas fa-envelope"></i> info@educacionfuturo.edu</p>
+                </div>
+                <div class="footer-stats">
+                    <p>📊 Sistema desarrollado con HTML, CSS y JavaScript</p>
+                    <p>🔄 Última actualización: <span id="currentDate"></span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Educación del Futuro.</p>
+                <p class="version">Versión 1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
